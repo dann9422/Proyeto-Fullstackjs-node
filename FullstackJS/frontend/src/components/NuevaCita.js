@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-import {Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 import ClienteAxios from '../config/axios';
+
 
 
 
@@ -27,15 +28,18 @@ const NuevaCita = (props) => {
 
         })
         }
-
-        const crearNuevaCita=e=>{
+        const navigate = useNavigate();
+        const crearNuevaCita =e=>{
           e.preventDefault();
           
           //enviar por axios
           ClienteAxios.post('/pacientes',cita)
           .then(respuesta =>{
               console.log(respuesta);
-              props.history.push('/');
+
+              props.guardarConsultar(true);
+    
+              navigate('/');            
                       })
         }
         
@@ -129,4 +133,4 @@ const NuevaCita = (props) => {
     </> );
 }
  
-export default NuevaCita;
+export default NuevaCita ;

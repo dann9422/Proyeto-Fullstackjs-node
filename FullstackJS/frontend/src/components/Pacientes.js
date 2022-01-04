@@ -17,7 +17,7 @@ if(citas.length ===0 ) return null
             <div className="col-md-8 mx-auto">
                 <div className="list-group">
                     {citas.map(Cita=>(
-                        <a key= {Cita._id} className="p-5 list-group-item 
+                        <Link to={`/Info/${Cita._id}`} key= {Cita._id} className="p-5 list-group-item 
                         list-group-item-action flex-column align-items-start"> 
                         <div className="d-flex w100 justify-content-between mb-4">
                         <h3  className="MB-3">{Cita.nombre}</h3>
@@ -30,9 +30,9 @@ if(citas.length ===0 ) return null
                         </p>
                         <div className="contacto py-3"></div>
                         <p>Dueño: {Cita.propietario}</p>
-                        <p>Dueño: {Cita.telefono}</p>
+                        <p>Telefono: {Cita.telefono}</p>
 
-                        </a>
+                        </Link>
                      
                     ))}
                 </div>
