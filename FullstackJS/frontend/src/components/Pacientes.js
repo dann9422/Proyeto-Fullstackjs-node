@@ -22,7 +22,7 @@ if(citas.length ===0 ) return null
                         <div className="d-flex w100 justify-content-between mb-4">
                         <h3  className="MB-3">{Cita.nombre}</h3>
                         <small className="fecha-alta">
-                            {Cita.fecha} 
+                            {Cita.fecha}-{Cita.hora}
                         </small>
                         </div>
                         <p className="mb-0">
